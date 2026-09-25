@@ -14,11 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
+
+from django.urls import include, path
 
 from mysite.views import my_page as home
 
-urlpatterns = [
-    path('', home, name='index'),
-    path('reels/', include('reels.urls'))
-]
+urlpatterns = [path("", home, name="index"), path("reels/", include("reels.urls"))]
+
+
+def function01(a: float) -> float:
+    b: float = a**a
+    return b
